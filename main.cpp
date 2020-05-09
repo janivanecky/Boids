@@ -9,7 +9,6 @@
 #include "random.h"
 #include <cassert>
 #include <mmsystem.h>
-#include "logging.h"
 
 float quad_vertices[] = {
     -1.0f, -1.0f, 0.0f, 1.0f,
