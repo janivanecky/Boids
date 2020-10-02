@@ -6,7 +6,6 @@
 #include "ui.h"
 #include "font.h"
 #include "input.h"
-#include "random.h"
 #include <cassert>
 #include <mmsystem.h>
 
@@ -103,12 +102,12 @@ int main(int argc, char **argv) {
     float *birds_vz_data = memory::alloc_heap<float>(NUM_BIRDS);
     
     for(int i = 0; i < NUM_BIRDS; ++i) {
-        birds_x_data[i] = random::uniform(0, world_width);
-        birds_y_data[i] = random::uniform(0, world_height);
-        birds_z_data[i] = random::uniform(0, world_height);
+        birds_x_data[i] = math::random_uniform(0.0f, float(world_width));
+        birds_y_data[i] = math::random_uniform(0.0f, float(world_height));
+        birds_z_data[i] = math::random_uniform(0.0f, float(world_height));
 
-        float random_azimuth = random::uniform(0, math::PI2);
-        float random_polar = random::uniform(0, math::PI);
+        float random_azimuth = math::random_uniform(0, math::PI2);
+        float random_polar = math::random_uniform(0, math::PI);
         birds_vx_data[i] = math::sin(random_azimuth) * math::sin(random_polar);
         birds_vy_data[i] = math::cos(random_polar);
         birds_vz_data[i] = math::cos(random_azimuth) * math::sin(random_polar);
