@@ -39,16 +39,16 @@ ComputeShader get_compute_shader(char *file_path) {
 int main(int argc, char **argv) {
     // Set up window
     uint32_t window_width = 1600, window_height = 900;
- 	Window window = platform::get_window("Boids", window_width, window_height);
+    HWND window = platform::get_window("Boids", window_width, window_height);
     uint32_t size = 200;
     uint32_t world_width = size, world_height = size, world_depth = size;
-    assert(platform::is_window_valid(&window));
+    assert(platform::is_window_valid(window));
 
     const int NUM_BIRDS = 1000000;
 
     // Init graphics
     graphics::init();
-    graphics::init_swap_chain(&window);
+    graphics::init_swap_chain(window, window_width, window_height);
 
     font::init();
     ui::init((float)window_width, (float)window_height);
