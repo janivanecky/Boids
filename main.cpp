@@ -3,6 +3,7 @@
 #include "file_system.h"
 #include "maths.h"
 #include "memory.h"
+#include "ui_draw.h"
 #include "ui.h"
 #include "font.h"
 #include "input.h"
@@ -51,7 +52,8 @@ int main(int argc, char **argv) {
     graphics::init_swap_chain(window, window_width, window_height);
 
     font::init();
-    ui::init((float)window_width, (float)window_height);
+    ui::init();
+    ui_draw::init((float)window_width, (float)window_height);
     ui::set_input_responsive(true);
 
     // Create window render target
