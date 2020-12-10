@@ -52,7 +52,6 @@ int main(int argc, char **argv) {
     graphics::init_swap_chain(window, window_width, window_height);
 
     font::init();
-    ui::init();
     ui_draw::init((float)window_width, (float)window_height);
     ui::set_input_responsive(true);
 
@@ -374,7 +373,7 @@ int main(int argc, char **argv) {
             ui::add_slider(&panel, "DECAY", &render_settings.decay, 0.0f, 1.0f);
 
             ui::end_panel(&panel);
-            ui::end();
+            ui::end_frame();
         }
 
         graphics::swap_frames();
@@ -383,8 +382,6 @@ int main(int argc, char **argv) {
         //data_texture_in = data_texture_out;
         //data_texture_out = temp;
     }
-
-    ui::release();
 
     graphics::release();
 
