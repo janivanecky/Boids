@@ -350,7 +350,7 @@ int main(int argc, char **argv) {
         graphics::unset_texture(1);
 
         if(show_ui) {
-            Panel panel = ui::start_panel("", Vector2(10, 10.0f), 420.0f);
+            Panel panel = ui::start_panel("", Vector2(10, 10.0f));
             ui::add_slider(&panel, "ALIGNMENT", &config.alignment_weight, 0, 2);
             ui::add_slider(&panel, "AVOIDANCE", &config.avoidance_weight, 0, 2);
             ui::add_slider(&panel, "COHESION", &config.cohesion_weight, 0, 2);
